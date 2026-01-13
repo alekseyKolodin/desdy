@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(./gradlew:*)"
+    ],
+    "deny": [],
+    "ask": [],
+    "env": {
+      "BASH_MAX_TIMEOUT_MS": 1200000,
+      "BASH_DEFAULT_TIMEOUT_MS": 180000
+    },
+    "attribution": {
+      "commit": "",
+      "pr": ""
+    },
+    "language": "ru"
+  }
+}
