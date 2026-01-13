@@ -68,7 +68,7 @@ dependencies {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "com.github.anthropics" // Замените на ваш GitHub username
+            groupId = "com.github.alekseyKolodin"
             artifactId = "desdy"
             version = "1.0.0"
 
@@ -79,7 +79,7 @@ publishing {
             pom {
                 name.set("Desdy Design System")
                 description.set("Noble and elegant Android design system built with Jetpack Compose")
-                url.set("https://github.com/anthropics/desdy") // Замените на ваш репозиторий
+                url.set("https://github.com/alekseyKolodin/desdy")
 
                 licenses {
                     license {
@@ -90,16 +90,16 @@ publishing {
 
                 developers {
                     developer {
-                        id.set("developer")
-                        name.set("Developer Name")
-                        email.set("developer@example.com")
+                        id.set("Aleksey")
+                        name.set("Aleksey Kolodin")
+                        email.set("aleksey.kolodin56@gmail.com\n")
                     }
                 }
 
                 scm {
-                    connection.set("scm:git:git://github.com/anthropics/desdy.git")
-                    developerConnection.set("scm:git:ssh://github.com/anthropics/desdy.git")
-                    url.set("https://github.com/anthropics/desdy")
+                    connection.set("scm:git:git://github.com/alekseyKolodin/desdy.git")
+                    developerConnection.set("scm:git:ssh://github.com/alekseyKolodin/desdy.git")
+                    url.set("https://github.com/alekseyKolodin/desdy")
                 }
             }
         }
