@@ -3,6 +3,7 @@ package com.example.desdy.showcase.screens
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
@@ -53,7 +54,7 @@ fun ShowcaseSettingsScreen(
 
         Spacer(Modifier.height(DesdyTheme.spacing.medium))
 
-        DesdyOutlinedCard {
+        DesdyOutlinedCard(Modifier.fillMaxWidth()) {
             Column(modifier = Modifier.padding(DesdyTheme.spacing.medium)) {
                 TitleMedium(text = "О дизайн-системе")
                 Spacer(Modifier.height(DesdyTheme.spacing.small))
