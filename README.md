@@ -57,6 +57,24 @@ dependencies {
 }
 ```
 
+### From git
+
+```
+ // settings.gradle.kts
+  dependencyResolutionManagement {
+      repositories {
+          google()
+          mavenCentral()
+          maven { url = uri("https://jitpack.io") }
+      }
+  }
+
+  // build.gradle.kts
+  dependencies {
+      implementation("com.github.YOUR_USERNAME:desdy:1.0.0")
+  }
+```
+
 ### Требования
 
 - **minSdk:** 24
