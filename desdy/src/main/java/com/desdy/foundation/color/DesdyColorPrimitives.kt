@@ -4,19 +4,83 @@ import androidx.compose.ui.graphics.Color
 
 /**
  * Raw color primitives for Desdy Design System.
- * "Noble" palette: muted, sophisticated, elegant tones.
  *
- * - Primary: Dusty Rose - warm, muted pink
- * - Secondary: Sage Green - calm, natural green
- * - Tertiary: Slate Blue - sophisticated, cool blue
- * - Neutrals: Warm Gray - elegant, not cold
+ * - Primary: Blue - clean, trustworthy
+ * - Secondary: Slate - neutral, professional
+ * - Tertiary: Emerald - fresh, vibrant accent
+ * - Neutrals: Cool Slate - modern, crisp
  */
 object DesdyColorPrimitives {
 
     // ============================================
-    // PRIMARY PALETTE - Dusty Rose
-    // A warm, muted rose that feels elegant and timeless
+    // PRIMARY PALETTE
+    // Clean, trustworthy, modern blue
     // ============================================
+    val Blue50 = Color(0xFFEFF6FF)
+    val Blue100 = Color(0xFFDBEAFE)
+    val Blue200 = Color(0xFFBFDBFE)
+    val Blue300 = Color(0xFF93C5FD)
+    val Blue400 = Color(0xFF60A5FA)
+    val Blue500 = Color(0xFF3B82F6)
+    val Blue600 = Color(0xFF2563EB)
+    val Blue700 = Color(0xFF1D4ED8)
+    val Blue800 = Color(0xFF1E40AF)
+    val Blue900 = Color(0xFF1E3A5F)
+    val Blue950 = Color(0xFF172554)
+
+    // ============================================
+    // SECONDARY PALETTE - Slate (Neutral gray-blue)
+    // Professional, modern neutrals
+    // ============================================
+    val Slate50 = Color(0xFFF8FAFC)
+    val Slate100 = Color(0xFFF1F5F9)
+    val Slate200 = Color(0xFFE2E8F0)
+    val Slate300 = Color(0xFFCBD5E1)
+    val Slate400 = Color(0xFF94A3B8)
+    val Slate500 = Color(0xFF64748B)
+    val Slate600 = Color(0xFF475569)
+    val Slate700 = Color(0xFF334155)
+    val Slate800 = Color(0xFF1E293B)
+    val Slate900 = Color(0xFF0F172A)
+    val Slate950 = Color(0xFF020617)
+
+    // ============================================
+    // TERTIARY PALETTE
+    // Fresh, vibrant green accent
+    // ============================================
+    val Emerald50 = Color(0xFFECFDF5)
+    val Emerald100 = Color(0xFFD1FAE5)
+    val Emerald200 = Color(0xFFA7F3D0)
+    val Emerald300 = Color(0xFF6EE7B7)
+    val Emerald400 = Color(0xFF34D399)
+    val Emerald500 = Color(0xFF10B981)
+    val Emerald600 = Color(0xFF059669)
+    val Emerald700 = Color(0xFF047857)
+    val Emerald800 = Color(0xFF065F46)
+    val Emerald900 = Color(0xFF064E3B)
+    val Emerald950 = Color(0xFF022C22)
+
+    // ============================================
+    // NEUTRAL PALETTE - Cool Slate
+    // Modern, crisp neutrals for backgrounds and text
+    // ============================================
+    val Neutral50 = Color(0xFFF8FAFC)
+    val Neutral100 = Color(0xFFF1F5F9)
+    val Neutral200 = Color(0xFFE2E8F0)
+    val Neutral300 = Color(0xFFCBD5E1)
+    val Neutral400 = Color(0xFF94A3B8)
+    val Neutral500 = Color(0xFF64748B)
+    val Neutral600 = Color(0xFF475569)
+    val Neutral700 = Color(0xFF334155)
+    val Neutral800 = Color(0xFF1E293B)
+    val Neutral900 = Color(0xFF0F172A)
+    val Neutral950 = Color(0xFF020617)
+
+    // ============================================
+    // LEGACY PALETTES (for backwards compatibility)
+    // ============================================
+
+    // Rose (Legacy Primary)
     val Rose50 = Color(0xFFFDF2F4)
     val Rose100 = Color(0xFFFCE7EB)
     val Rose200 = Color(0xFFF9D0D9)
@@ -29,10 +93,7 @@ object DesdyColorPrimitives {
     val Rose900 = Color(0xFF78283E)
     val Rose950 = Color(0xFF43111E)
 
-    // ============================================
-    // SECONDARY PALETTE - Sage Green
-    // A calm, natural green with gray undertones
-    // ============================================
+    // Sage (Legacy Secondary)
     val Sage50 = Color(0xFFF6F7F4)
     val Sage100 = Color(0xFFEAEDE4)
     val Sage200 = Color(0xFFD5DBCB)
@@ -44,38 +105,6 @@ object DesdyColorPrimitives {
     val Sage800 = Color(0xFF404C37)
     val Sage900 = Color(0xFF374130)
     val Sage950 = Color(0xFF1C2218)
-
-    // ============================================
-    // TERTIARY PALETTE - Slate Blue
-    // A sophisticated, cool blue-gray
-    // ============================================
-    val Slate50 = Color(0xFFF5F7FA)
-    val Slate100 = Color(0xFFEAEEF4)
-    val Slate200 = Color(0xFFD0DAE7)
-    val Slate300 = Color(0xFFA8BAD1)
-    val Slate400 = Color(0xFF7A95B6)
-    val Slate500 = Color(0xFF5A789E)
-    val Slate600 = Color(0xFF476184)
-    val Slate700 = Color(0xFF3B4F6B)
-    val Slate800 = Color(0xFF34445A)
-    val Slate900 = Color(0xFF2F3B4D)
-    val Slate950 = Color(0xFF1F2733)
-
-    // ============================================
-    // NEUTRAL PALETTE - Warm Gray
-    // Elegant warm grays, avoiding cold/stark tones
-    // ============================================
-    val Neutral50 = Color(0xFFFAF9F7)
-    val Neutral100 = Color(0xFFF5F3F0)
-    val Neutral200 = Color(0xFFE8E5E0)
-    val Neutral300 = Color(0xFFD6D2CB)
-    val Neutral400 = Color(0xFFB8B2A8)
-    val Neutral500 = Color(0xFF9A9388)
-    val Neutral600 = Color(0xFF7D7770)
-    val Neutral700 = Color(0xFF66625C)
-    val Neutral800 = Color(0xFF55524E)
-    val Neutral900 = Color(0xFF4A4844)
-    val Neutral950 = Color(0xFF272624)
 
     // ============================================
     // SEMANTIC COLORS
