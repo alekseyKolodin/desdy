@@ -71,7 +71,7 @@ dependencies {
 
   // build.gradle.kts
   dependencies {
-      implementation("com.github.YOUR_USERNAME:desdy:1.0.0")
+      implementation("com.github.alekseyKolodin:desdy:1.0.0")
   }
 ```
 
