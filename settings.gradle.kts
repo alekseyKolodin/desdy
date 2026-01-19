@@ -20,5 +20,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Desdy"
-include(":app")
-include(":desdy")
+include(":shared")
+include(":android-showcase")
+include(":desktop-showcase")
+// include(":ios-showcase")      // Xcode project (managed by Xcode)

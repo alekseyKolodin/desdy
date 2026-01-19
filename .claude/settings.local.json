@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "Bash(./gradlew:*)"
+      "Bash(./gradlew:*)",
+      "mcp__jetbrains__list_directory_tree",
+      "mcp__jetbrains__get_project_modules",
+      "mcp__jetbrains__get_project_dependencies",
+      "mcp__deepwiki__ask_question",
+      "Bash(java -version:*)"
     ],
     "deny": [],
     "ask": [],
