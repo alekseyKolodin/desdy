@@ -36,6 +36,24 @@ dependencies {
 }
 ```
 
+### From git
+
+```
+ // settings.gradle.kts
+  dependencyResolutionManagement {
+      repositories {
+          google()
+          mavenCentral()
+          maven { url = uri("https://jitpack.io") }
+      }
+  }
+
+  // build.gradle.kts
+  dependencies {
+      implementation("com.github.alekseyKolodin:desdy:1.0.0")
+  }
+```
+
 ### Требования
 
 | Платформа | Минимальная версия |
