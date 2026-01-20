@@ -34,14 +34,14 @@ dependencyResolutionManagement {
 **build.gradle.kts (Kotlin DSL):**
 ```kotlin
 dependencies {
-    implementation("com.github.alekseyKolodin.desdy:shared:2.0.1")
+    implementation("com.github.alekseyKolodin.desdy:shared:2.0.2")
 }
 ```
 
 **build.gradle (Groovy):**
 ```groovy
 dependencies {
-    implementation 'com.github.alekseyKolodin.desdy:shared:2.0.1'
+    implementation 'com.github.alekseyKolodin.desdy:shared:2.0.2'
 }
 ```
 
@@ -281,7 +281,7 @@ StreakCounter(
 
 | Версия | Описание |
 |--------|----------|
-| 2.0.1 | Исправлена публикация KMP артефактов + iOS fix |
+| 2.0.2 | Исправлена публикация KMP артефактов + iOS fix |
 | 2.0.0 | KMP миграция + SoulSync компоненты |
 | 1.x.x | Android-only версия |
 

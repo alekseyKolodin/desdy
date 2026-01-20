@@ -5,14 +5,14 @@
 ```bash
 # 1. Закоммитить изменения
 git add .
-git commit -m "v2.0.1: Описание изменений"
+git commit -m "v2.0.2: Описание изменений"
 
 # 2. Создать тег
-git tag v2.0.1
+git tag v2.0.2
 
 # 3. Запушить
 git push origin main
-git push origin v2.0.1
+git push origin v2.0.2
 ```
 
 ---
@@ -37,7 +37,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.alekseyKolodin"
             artifactId = "desdy"
-            version = "2.0.1"  // <- Обновить здесь
+            version = "2.0.2"  // <- Обновить здесь
             // ...
         }
     }
@@ -48,7 +48,7 @@ publishing {
 
 ```bash
 git add .
-git commit -m "v2.0.1: Краткое описание изменений
+git commit -m "v2.0.2: Краткое описание изменений
 
 - Пункт 1
 - Пункт 2
@@ -58,14 +58,14 @@ git commit -m "v2.0.1: Краткое описание изменений
 ### 4. Создать тег версии
 
 ```bash
-git tag v2.0.1
+git tag v2.0.2
 ```
 
 ### 5. Запушить на GitHub
 
 ```bash
 git push origin main
-git push origin v2.0.1
+git push origin v2.0.2
 ```
 
 ### 6. Проверить сборку на JitPack
@@ -97,7 +97,7 @@ dependencyResolutionManagement {
 ```kotlin
 dependencies {
     // Kotlin Multiplatform (Android, iOS, Desktop)
-    implementation("com.github.alekseyKolodin.desdy:shared:2.0.1")
+    implementation("com.github.alekseyKolodin.desdy:shared:2.0.2")
 }
 ```
 
@@ -115,7 +115,7 @@ dependencyResolutionManagement {
 **build.gradle:**
 ```groovy
 dependencies {
-    implementation 'com.github.alekseyKolodin.desdy:shared:2.0.1'
+    implementation 'com.github.alekseyKolodin.desdy:shared:2.0.2'
 }
 ```
 
@@ -137,10 +137,10 @@ dependencies {
 
 ```bash
 # Удалить локально
-git tag -d v2.0.1
+git tag -d v2.0.2
 
 # Удалить на remote
-git push origin :refs/tags/v2.0.1
+git push origin :refs/tags/v2.0.2
 ```
 
 После этого можно создать тег заново.
@@ -172,6 +172,6 @@ git push origin :refs/tags/v2.0.1
 
 | Версия | Дата | Описание |
 |--------|------|----------|
-| 2.0.1 | 2026-01 | Исправлена публикация KMP + iOS fix |
+| 2.0.2 | 2026-01 | Исправлена публикация KMP + iOS fix |
 | 2.0.0 | 2026-01 | KMP миграция + SoulSync компоненты |
 | 1.x.x | ... | Предыдущие версии |
