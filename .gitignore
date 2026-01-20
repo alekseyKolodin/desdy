@@ -1,15 +1,117 @@
+# Gradle
+.gradle/
+build/
+**/build/
+!src/**/build/
+
+# Kotlin
+.kotlin/
+kotlin-js-store/
+
+# IntelliJ IDEA / Android Studio
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+*.ipr
+*.iws
+out/
+.idea_modules/
+
+# Local configuration
 local.properties
+*.local
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.directory
+
+# Android
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+captures/
+.externalNativeBuild/
+.cxx/
+*.log
+*.hprof
+
+# iOS / Xcode
+xcuserdata/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+Pods/
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+*.hmap
+
+# CocoaPods
+iosApp/Pods/
+iosApp/Podfile.lock
+
+# Swift Package Manager
+.swiftpm/
+Package.resolved
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Compose
+.compose/
+
+# KMP Framework
+iosApp/iosApp/Frameworks/
+
+# Node (if used for tooling)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment / Secrets
+.env
+.env.*
+*.keystore
+*.jks
+google-services.json
+GoogleService-Info.plist
+
+# Crash reports
+crashlytics-build.properties
+fabric.properties
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~.nib
+
+# Generated files
+generated/
+*.generated.*
