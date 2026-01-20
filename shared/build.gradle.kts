@@ -64,7 +64,7 @@ android {
 // Publishing configuration for KMP
 // Kotlin Multiplatform automatically creates publications for each target
 group = "io.github.alekseykolodin"
-version = "2.0.2"
+version = "2.0.3"
 
 publishing {
     repositories {
