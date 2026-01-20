@@ -16,7 +16,7 @@
 
 ## Установка
 
-### JitPack
+### 1. Добавь JitPack репозиторий
 
 **settings.gradle.kts:**
 ```kotlin
@@ -29,10 +29,19 @@ dependencyResolutionManagement {
 }
 ```
 
-**build.gradle.kts:**
+### 2. Добавь зависимость
+
+**build.gradle.kts (Kotlin DSL):**
 ```kotlin
 dependencies {
-    implementation("com.github.alekseyKolodin.desdy:shared:2.0.0")
+    implementation("com.github.alekseyKolodin.desdy:shared:2.0.1")
+}
+```
+
+**build.gradle (Groovy):**
+```groovy
+dependencies {
+    implementation 'com.github.alekseyKolodin.desdy:shared:2.0.1'
 }
 ```
 
@@ -272,6 +281,7 @@ StreakCounter(
 
 | Версия | Описание |
 |--------|----------|
+| 2.0.1 | Исправлена публикация KMP артефактов + iOS fix |
 | 2.0.0 | KMP миграция + SoulSync компоненты |
 | 1.x.x | Android-only версия |
 

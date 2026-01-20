@@ -65,7 +65,7 @@ android {
 // Kotlin Multiplatform automatically creates publications for each target
 // We just need to configure the group and version
 group = "com.github.alekseyKolodin"
-version = "2.0.0"
+version = "2.0.1"
 
 publishing {
     publications.withType<MavenPublication> {

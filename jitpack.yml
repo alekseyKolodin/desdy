@@ -6,4 +6,4 @@ before_install:
   - sdk use java 21.0.2-tem
 
 install:
-  - ./gradlew :shared:publish
+  - ./gradlew :shared:publishToMavenLocal
