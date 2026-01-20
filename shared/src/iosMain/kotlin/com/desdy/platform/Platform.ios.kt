@@ -1,13 +1,13 @@
 package com.desdy.platform
 
 import androidx.compose.runtime.Composable
-import platform.UIKit.UITraitCollection
+import platform.UIKit.UIScreen
 import platform.UIKit.UIUserInterfaceStyle
 
 @Composable
 actual fun isSystemInDarkTheme(): Boolean {
-    val currentTraitCollection = UITraitCollection.currentTraitCollection
-    return currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyle.UIUserInterfaceStyleDark
+    val traitCollection = UIScreen.mainScreen.traitCollection
+    return traitCollection.userInterfaceStyle == UIUserInterfaceStyle.UIUserInterfaceStyleDark
 }
 
 actual fun provideHapticFeedback() {

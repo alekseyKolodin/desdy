@@ -61,39 +61,38 @@ android {
     }
 }
 
-// Publishing configuration
+// Publishing configuration for KMP
+// Kotlin Multiplatform automatically creates publications for each target
+// We just need to configure the group and version
+group = "com.github.alekseyKolodin"
+version = "2.0.0"
+
 publishing {
-    publications {
-        register<MavenPublication>("release") {
-            groupId = "com.github.alekseyKolodin"
-            artifactId = "desdy"
-            version = "2.0.0"
+    publications.withType<MavenPublication> {
+        pom {
+            name.set("Desdy Design System")
+            description.set("Kotlin Multiplatform design system for Android, iOS, and Desktop")
+            url.set("https://github.com/alekseyKolodin/desdy")
 
-            pom {
-                name.set("Desdy Design System")
-                description.set("Kotlin Multiplatform design system for Android, iOS, and Desktop")
+            licenses {
+                license {
+                    name.set("Apache License 2.0")
+                    url.set("https://www.apache.org/licenses/LICENSE-2.0")
+                }
+            }
+
+            developers {
+                developer {
+                    id.set("Aleksey")
+                    name.set("Aleksey Kolodin")
+                    email.set("aleksey.kolodin56@gmail.com")
+                }
+            }
+
+            scm {
+                connection.set("scm:git:git://github.com/alekseyKolodin/desdy.git")
+                developerConnection.set("scm:git:ssh://github.com/alekseyKolodin/desdy.git")
                 url.set("https://github.com/alekseyKolodin/desdy")
-
-                licenses {
-                    license {
-                        name.set("Apache License 2.0")
-                        url.set("https://www.apache.org/licenses/LICENSE-2.0")
-                    }
-                }
-
-                developers {
-                    developer {
-                        id.set("Aleksey")
-                        name.set("Aleksey Kolodin")
-                        email.set("aleksey.kolodin56@gmail.com")
-                    }
-                }
-
-                scm {
-                    connection.set("scm:git:git://github.com/alekseyKolodin/desdy.git")
-                    developerConnection.set("scm:git:ssh://github.com/alekseyKolodin/desdy.git")
-                    url.set("https://github.com/alekseyKolodin/desdy")
-                }
             }
         }
     }

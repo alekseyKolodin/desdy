@@ -96,8 +96,8 @@ dependencyResolutionManagement {
 **build.gradle.kts:**
 ```kotlin
 dependencies {
-    // Для Android/JVM
-    implementation("com.github.alekseyKolodin:desdy:2.x.x")
+    // Kotlin Multiplatform (Android, iOS, Desktop)
+    implementation("com.github.alekseyKolodin.desdy:shared:2.x.x")
 }
 ```
 
@@ -115,7 +115,7 @@ dependencyResolutionManagement {
 **build.gradle:**
 ```groovy
 dependencies {
-    implementation 'com.github.alekseyKolodin:desdy:2.x.x'
+    implementation 'com.github.alekseyKolodin.desdy:shared:2.x.x'
 }
 ```
 

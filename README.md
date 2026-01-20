@@ -32,26 +32,8 @@ dependencyResolutionManagement {
 **build.gradle.kts:**
 ```kotlin
 dependencies {
-    implementation("com.github.alekseyKolodin:desdy:2.0.0")
+    implementation("com.github.alekseyKolodin.desdy:shared:2.0.0")
 }
-```
-
-### From git
-
-```
- // settings.gradle.kts
-  dependencyResolutionManagement {
-      repositories {
-          google()
-          mavenCentral()
-          maven { url = uri("https://jitpack.io") }
-      }
-  }
-
-  // build.gradle.kts
-  dependencies {
-      implementation("com.github.alekseyKolodin:desdy:1.0.0")
-  }
 ```
 
 ### Требования

@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../shared/2.0.0/shared-2.0.0.module",
+    "group": "com.github.alekseyKolodin",
+    "module": "shared",
+    "version": "2.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.13"
+    }
+  },
+  "variants": [
+    {
+      "name": "desktopApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "shared-desktop-2.0.0.jar",
+          "url": "shared-desktop-2.0.0.jar",
+          "size": 395378,
+          "sha512": "6970cb7e1d5bc469ba70b27e540dc4161087a7e9a5086d1ce9096dea3bd33d66c4c28cc3235ce00622799d1fc0261cf8adf6ea8b4f22356d0c9492ec5968f7e7",
+          "sha256": "c8de3bb344b870f8ab458e06c1d4e767c702fe78d20f13acca4dfd0a5195e1fb",
+          "sha1": "5db500bb5f85c24b43b60d16dc1f8491066dde72",
+          "md5": "b04f3c3fbb831df4bb51267d1389adbd"
+        }
+      ]
+    },
+    {
+      "name": "desktopRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.desktop",
+          "module": "desktop",
+          "version": {
+            "requires": "1.7.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.runtime",
+          "module": "runtime",
+          "version": {
+            "requires": "1.7.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.foundation",
+          "module": "foundation",
+          "version": {
+            "requires": "1.7.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.material3",
+          "module": "material3",
+          "version": {
+            "requires": "1.7.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.ui",
+          "module": "ui",
+          "version": {
+            "requires": "1.7.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.compose.components",
+          "module": "components-resources",
+          "version": {
+            "requires": "1.7.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "shared-desktop-2.0.0.jar",
+          "url": "shared-desktop-2.0.0.jar",
+          "size": 395378,
+          "sha512": "6970cb7e1d5bc469ba70b27e540dc4161087a7e9a5086d1ce9096dea3bd33d66c4c28cc3235ce00622799d1fc0261cf8adf6ea8b4f22356d0c9492ec5968f7e7",
+          "sha256": "c8de3bb344b870f8ab458e06c1d4e767c702fe78d20f13acca4dfd0a5195e1fb",
+          "sha1": "5db500bb5f85c24b43b60d16dc1f8491066dde72",
+          "md5": "b04f3c3fbb831df4bb51267d1389adbd"
+        }
+      ]
+    },
+    {
+      "name": "desktopSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "shared-desktop-2.0.0-sources.jar",
+          "url": "shared-desktop-2.0.0-sources.jar",
+          "size": 52264,
+          "sha512": "3c783fe949493f449b1312fc03d14cb575b733b59f41b68cff9280fbe1bea741880def896fac2974edcf80ce26cff0ba13da4ef21c7678c7945c5215fccb5a67",
+          "sha256": "50e4d8ecb7858e81aca984592f68597d63007cf588bf03575fde906b730315da",
+          "sha1": "a5af990b3379a309ab9d383e379a274658d56eeb",
+          "md5": "bbf0d75c42d4496f6b3e98252f95eb5f"
+        }
+      ]
+    }
+  ]
+}

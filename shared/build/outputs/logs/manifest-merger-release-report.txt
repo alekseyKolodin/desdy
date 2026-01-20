@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/akolodin/AndroidStudioProjects/Desdy/shared/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest4953720743504453887.xml:2:13-83
+INJECTED from /Users/akolodin/AndroidStudioProjects/Desdy/shared/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest4953720743504453887.xml:2:13-83
+	package
+		INJECTED from /Users/akolodin/AndroidStudioProjects/Desdy/shared/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest4953720743504453887.xml
+	xmlns:android
+		ADDED from /Users/akolodin/AndroidStudioProjects/Desdy/shared/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest4953720743504453887.xml:2:23-81
+uses-sdk
+INJECTED from /Users/akolodin/AndroidStudioProjects/Desdy/shared/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest4953720743504453887.xml reason: use-sdk injection requested
+INJECTED from /Users/akolodin/AndroidStudioProjects/Desdy/shared/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest4953720743504453887.xml
+INJECTED from /Users/akolodin/AndroidStudioProjects/Desdy/shared/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest4953720743504453887.xml
+	android:targetSdkVersion
+		INJECTED from /Users/akolodin/AndroidStudioProjects/Desdy/shared/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest4953720743504453887.xml
+	android:minSdkVersion
+		INJECTED from /Users/akolodin/AndroidStudioProjects/Desdy/shared/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest4953720743504453887.xml
