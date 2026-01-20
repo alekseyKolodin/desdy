@@ -1,121 +1,82 @@
-# Публикация Desdy на JitPack
+# Публикация Desdy
 
-## Быстрая публикация
+Библиотека публикуется в **GitHub Packages** через GitHub Actions.
 
-```bash
-# 1. Закоммитить изменения
-git add .
-git commit -m "v2.0.2: Описание изменений"
+## Публикация новой версии
 
-# 2. Создать тег
-git tag v2.0.2
+### 1. Обновить версию
 
-# 3. Запушить
-git push origin main
-git push origin v2.0.2
-```
-
----
-
-## Подробная инструкция
-
-### 1. Проверить сборку локально
-
-Перед публикацией убедитесь, что проект компилируется:
-
-```bash
-./gradlew :shared:build
-```
-
-### 2. Обновить версию
-
-Отредактируйте версию в `shared/build.gradle.kts`:
-
+**shared/build.gradle.kts:**
 ```kotlin
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            groupId = "com.github.alekseyKolodin"
-            artifactId = "desdy"
-            version = "2.0.2"  // <- Обновить здесь
-            // ...
-        }
-    }
-}
+version = "2.0.3"  // <- Обновить здесь
 ```
 
-### 3. Закоммитить изменения
+### 2. Закоммитить изменения
 
 ```bash
 git add .
-git commit -m "v2.0.2: Краткое описание изменений
-
-- Пункт 1
-- Пункт 2
-- Пункт 3"
+git commit -m "v2.0.3: Описание изменений"
 ```
 
-### 4. Создать тег версии
+### 3. Создать тег и запушить
 
 ```bash
-git tag v2.0.2
-```
-
-### 5. Запушить на GitHub
-
-```bash
+git tag v2.0.3
 git push origin main
-git push origin v2.0.2
+git push origin v2.0.3
 ```
 
-### 6. Проверить сборку на JitPack
+GitHub Actions автоматически соберёт и опубликует все артефакты (включая iOS).
 
-1. Перейти на https://jitpack.io/#alekseyKolodin/desdy
-2. Найти свой тег в списке
-3. Нажать "Get it" для запуска сборки
-4. Дождаться зелёной галочки ✓
+### 4. Проверить публикацию
+
+1. Перейти на https://github.com/alekseyKolodin/desdy/actions
+2. Дождаться успешного завершения workflow
+3. Проверить пакеты: https://github.com/alekseyKolodin/desdy/packages
 
 ---
 
 ## Использование в проектах
 
-### Gradle (Kotlin DSL)
+### 1. Создать Personal Access Token
+
+1. GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
+2. Generate new token с правом `read:packages`
+3. Сохранить токен
+
+### 2. Настроить credentials
+
+**~/.gradle/gradle.properties:**
+```properties
+gpr.user=YOUR_GITHUB_USERNAME
+gpr.token=YOUR_GITHUB_TOKEN
+```
+
+### 3. Добавить репозиторий
 
 **settings.gradle.kts:**
 ```kotlin
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
-        maven { url = uri("https://jitpack.io") }
+        maven {
+            url = uri("https://maven.pkg.github.com/alekseyKolodin/desdy")
+            credentials {
+                username = providers.gradleProperty("gpr.user").orNull ?: System.getenv("GITHUB_ACTOR")
+                password = providers.gradleProperty("gpr.token").orNull ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
     }
 }
 ```
+
+### 4. Добавить зависимость
 
 **build.gradle.kts:**
 ```kotlin
 dependencies {
-    // Kotlin Multiplatform (Android, iOS, Desktop)
-    implementation("com.github.alekseyKolodin.desdy:shared:2.0.2")
-}
-```
-
-### Gradle (Groovy)
-
-**settings.gradle:**
-```groovy
-dependencyResolutionManagement {
-    repositories {
-        maven { url 'https://jitpack.io' }
-    }
-}
-```
-
-**build.gradle:**
-```groovy
-dependencies {
-    implementation 'com.github.alekseyKolodin.desdy:shared:2.0.2'
+    implementation("io.github.alekseykolodin:shared:2.0.2")
 }
 ```
 
@@ -123,55 +84,23 @@ dependencies {
 
 ## Структура артефактов
 
-После публикации доступны следующие артефакты:
+После публикации доступны:
 
-| Платформа | Артефакт |
-|-----------|----------|
-| Android | `desdy-android` |
-| Desktop (JVM) | `desdy-desktop` |
-| iOS | Framework `DesdyDesign` |
-
----
-
-## Удаление тега (если нужно перевыпустить)
-
-```bash
-# Удалить локально
-git tag -d v2.0.2
-
-# Удалить на remote
-git push origin :refs/tags/v2.0.2
-```
-
-После этого можно создать тег заново.
-
----
-
-## Troubleshooting
-
-### Сборка на JitPack падает
-
-1. Проверить логи на https://jitpack.io/#alekseyKolodin/desdy
-2. Убедиться, что `jitpack.yml` актуален:
-   ```yaml
-   jdk:
-     - openjdk21
-   install:
-     - ./gradlew :shared:publishToMavenLocal
-   ```
-
-### Зависимость не находится
-
-1. Подождать 5-10 минут после публикации
-2. Очистить кэш Gradle: `./gradlew --refresh-dependencies`
-3. Проверить правильность написания версии
+| Артефакт | Описание |
+|----------|----------|
+| `shared` | KMP metadata (common) |
+| `shared-android` | Android |
+| `shared-desktop` | Desktop (JVM) |
+| `shared-iosarm64` | iOS ARM64 |
+| `shared-iossimulatorarm64` | iOS Simulator ARM64 |
+| `shared-iosx64` | iOS Simulator x64 |
 
 ---
 
 ## История версий
 
-| Версия | Дата | Описание |
-|--------|------|----------|
-| 2.0.2 | 2026-01 | Исправлена публикация KMP + iOS fix |
-| 2.0.0 | 2026-01 | KMP миграция + SoulSync компоненты |
-| 1.x.x | ... | Предыдущие версии |
+| Версия | Описание |
+|--------|----------|
+| 2.0.2 | GitHub Packages + iOS support |
+| 2.0.0 | KMP миграция + SoulSync компоненты |
+| 1.x.x | Android-only версия (JitPack) |

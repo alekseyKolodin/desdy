@@ -63,11 +63,21 @@ android {
 
 // Publishing configuration for KMP
 // Kotlin Multiplatform automatically creates publications for each target
-// We just need to configure the group and version
-group = "com.github.alekseyKolodin"
+group = "io.github.alekseykolodin"
 version = "2.0.2"
 
 publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/alekseyKolodin/desdy")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR") ?: project.findProperty("gpr.user") as String? ?: ""
+                password = System.getenv("GITHUB_TOKEN") ?: project.findProperty("gpr.token") as String? ?: ""
+            }
+        }
+    }
+
     publications.withType<MavenPublication> {
         pom {
             name.set("Desdy Design System")

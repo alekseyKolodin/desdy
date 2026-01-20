@@ -2,8 +2,6 @@
 
 Современная дизайн-система на **Kotlin Multiplatform** для Android, iOS и Desktop.
 
-[![](https://jitpack.io/v/alekseyKolodin/desdy.svg)](https://jitpack.io/#alekseyKolodin/desdy)
-
 ## Особенности
 
 - **Kotlin Multiplatform** — единый код для Android, iOS и Desktop
@@ -16,7 +14,22 @@
 
 ## Установка
 
-### 1. Добавь JitPack репозиторий
+### 1. Создай Personal Access Token (PAT)
+
+GitHub Packages требует аутентификации. Создай токен:
+1. GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
+2. Generate new token с правом `read:packages`
+3. Сохрани токен
+
+### 2. Настрой credentials
+
+**~/.gradle/gradle.properties:**
+```properties
+gpr.user=YOUR_GITHUB_USERNAME
+gpr.token=YOUR_GITHUB_TOKEN
+```
+
+### 3. Добавь репозиторий
 
 **settings.gradle.kts:**
 ```kotlin
@@ -24,24 +37,23 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url = uri("https://jitpack.io") }
+        maven {
+            url = uri("https://maven.pkg.github.com/alekseyKolodin/desdy")
+            credentials {
+                username = providers.gradleProperty("gpr.user").orNull ?: System.getenv("GITHUB_ACTOR")
+                password = providers.gradleProperty("gpr.token").orNull ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
     }
 }
 ```
 
-### 2. Добавь зависимость
+### 4. Добавь зависимость
 
-**build.gradle.kts (Kotlin DSL):**
+**build.gradle.kts:**
 ```kotlin
 dependencies {
-    implementation("com.github.alekseyKolodin.desdy:shared:2.0.2")
-}
-```
-
-**build.gradle (Groovy):**
-```groovy
-dependencies {
-    implementation 'com.github.alekseyKolodin.desdy:shared:2.0.2'
+    implementation("io.github.alekseykolodin:shared:2.0.2")
 }
 ```
 
@@ -273,7 +285,12 @@ StreakCounter(
 
 ## Публикация
 
-См. [PUBLISHING.md](PUBLISHING.md) для инструкций по публикации новых версий.
+Публикация происходит автоматически через GitHub Actions при создании тега:
+
+```bash
+git tag v2.0.3
+git push origin v2.0.3
+```
 
 ---
 
@@ -281,7 +298,7 @@ StreakCounter(
 
 | Версия | Описание |
 |--------|----------|
-| 2.0.2 | Исправлена публикация KMP артефактов + iOS fix |
+| 2.0.2 | GitHub Packages + iOS support |
 | 2.0.0 | KMP миграция + SoulSync компоненты |
 | 1.x.x | Android-only версия |
 
